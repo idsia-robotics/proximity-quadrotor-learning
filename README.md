@@ -1,6 +1,5 @@
 # Vision-based Control of a Quadrotor in User Proximity: Mediated vs End-to-End Learning Approaches
-## Authors
-Dario Mantegazza, Jérôme Guzzi, Luca M. Gambardella and Alessandro Giusti
+*Dario Mantegazza, Jérôme Guzzi, Luca M. Gambardella and Alessandro Giusti*
 ## *Abstract*
 We consider the task of controlling a quadrotor
 to hover in front of a freely moving user, using input data
