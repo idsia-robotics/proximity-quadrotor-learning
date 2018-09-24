@@ -11,3 +11,9 @@ high-level state estimation altogether. We show that despite
 their fundamental difference, both approaches yield equivalent
 performance on this task. We finally qualitatively analyze the
 behavior of a quadrotor implementing such approaches.
+### Code
+TODO
+### Dataset
+TODO 
+### Video
+TODO
