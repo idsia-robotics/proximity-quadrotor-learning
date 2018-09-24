@@ -8,7 +8,7 @@ import rosbag
 import tqdm as tqdm
 
 from global_parameters import *
-from jerome_controller import Controller
+from direct_controller import Controller
 from utils import *
 
 
@@ -56,9 +56,6 @@ class DatasetCreator:
         elif flag_train == "test":
             val = pd.DataFrame(list(self.dataset))
             val.to_pickle("../dataset/" + folder_n + "/test.pickle")
-        elif flag_train == "cross":
-            val = pd.DataFrame(list(self.dataset))
-            val.to_pickle("../dataset/" + folder_n + "/crossvalidation/" + title)
         else:
             print("ERROR in FLAG TRAIN")
             sys.exit(1)
@@ -323,7 +320,7 @@ def processing(bag_df_dict, data_id, f, model_type):
         max_ = bag_end_cut[f[:-4]]
         min_ = bag_start_cut[f[:-4]]
         data_vec = []
-        j_ctrl = Controller()
+        d_ctrl = Controller()
         for i in tqdm.tqdm(range(min_, max_), desc="processing data " + str(data_id)):
             b_id = find_nearest(bebop_t, camera_t[i])
             h_id = find_nearest(head_t, camera_t[i])
@@ -352,7 +349,7 @@ def processing(bag_df_dict, data_id, f, model_type):
             new_bebop_twist = new_bebop_twist[:-1, -1:].T[0]
 
             v_drone = [new_bebop_twist[0], new_bebop_twist[1], 0]
-            target = j_ctrl.new_controller(target_position, relative_yaw, v_drone, delay=0.0)
+            target = d_ctrl.new_controller(target_position, relative_yaw, v_drone, delay=0.0)
             data_vec.append((img, np.asarray([vel_x, vel_y]), target))
         return data_vec
     elif model_type == "v3":
@@ -365,7 +362,7 @@ def processing(bag_df_dict, data_id, f, model_type):
         max_ = bag_end_cut[f[:-4]]
         min_ = bag_start_cut[f[:-4]]
         data_vec = []
-        j_ctrl = Controller()
+        d_ctrl = Controller()
         for i in tqdm.tqdm(range(min_, max_), desc="processing data " + str(data_id)):
             odom_id = find_nearest(odom_t, camera_t[i])
             b_id = find_nearest(bebop_t, camera_t[i])
@@ -394,7 +391,7 @@ def processing(bag_df_dict, data_id, f, model_type):
             new_bebop_twist = new_bebop_twist[:-1, -1:].T[0]
 
             v_drone = [new_bebop_twist[0], new_bebop_twist[1], 0]
-            target = j_ctrl.new_controller(target_position, relative_yaw, v_drone, delay=0.0)
+            target = d_ctrl.new_controller(target_position, relative_yaw, v_drone, delay=0.0)
             rel_head = (target_position[0], target_position[1], target_position[2], relative_yaw)
             data_vec.append((img, rel_head, np.asarray([vel_x, vel_y]), target))
         return data_vec
@@ -460,134 +457,68 @@ def main():
     scelta = raw_input("experiment_version:\n    -v1[1]\n    -v2[2]\n    -v3[3]\n")
     if scelta == "1":
         model_type = "v1"
-        scelta2 = raw_input("single or cross:[s/c]")
-        if scelta2 == "s":
-            path = "../bagfiles/train/"
-            print("creating Train set")
-            files = [f for f in os.listdir(path) if f[-4:] == '.bag']
-            if not files:
-                print('No bag files found!')
-                return None
-            datacr_train = DatasetCreator()
-            for f in files:
-                path = bag_file_path[f[:-4]]
-                print("\nreading bag: " + str(f))
-                with rosbag.Bag(path + f) as bag:
-                    bag_df_dict = get_bag_data_pandas(bag, model_type=model_type)
-                data_vec = processing(bag_df_dict=bag_df_dict, data_id=f[:-4], f=f, model_type=model_type)
-                datacr_train.generate_data(data_vec=data_vec)
-            datacr_train.save_dataset(flag_train="train", model_type=model_type)
+        path = "../bagfiles/train/"
+        print("creating Train set")
+        files = [f for f in os.listdir(path) if f[-4:] == '.bag']
+        if not files:
+            print('No bag files found!')
+            return None
+        datacr_train = DatasetCreator()
+        for f in files:
+            path = bag_file_path[f[:-4]]
+            print("\nreading bag: " + str(f))
+            with rosbag.Bag(path + f) as bag:
+                bag_df_dict = get_bag_data_pandas(bag, model_type=model_type)
+            data_vec = processing(bag_df_dict=bag_df_dict, data_id=f[:-4], f=f, model_type=model_type)
+            datacr_train.generate_data(data_vec=data_vec)
+        datacr_train.save_dataset(flag_train="train", model_type=model_type)
 
-            path = "../bagfiles/validation/"
-            print("creating test set")
-            files = [f for f in os.listdir(path) if f[-4:] == '.bag']
-            if not files:
-                print('No bag files found!')
-                return None
-            datacr_val = DatasetCreator()
-            for f in files:
-                path = bag_file_path[f[:-4]]
-                print("\nreading bag: " + str(f))
-                with rosbag.Bag(path + f) as bag:
-                    bag_df_dict = get_bag_data_pandas(bag, model_type=model_type)
-                data_vec = processing(bag_df_dict=bag_df_dict, data_id=f[:-4], f=f, model_type=model_type)
-                datacr_val.generate_data(data_vec=data_vec)
-            datacr_val.save_dataset(flag_train="test", model_type=model_type)
-
-        elif scelta2 == "c":
-            path1 = "../bagfiles/train/"
-            path2 = "../bagfiles/validation/"
-
-            files1 = [f for f in os.listdir(path1) if f[-4:] == '.bag']
-            if not files1:
-                print('No bag files found!')
-                return None
-            files2 = [f for f in os.listdir(path2) if f[-4:] == '.bag']
-            if not files2:
-                print('No bag files found!')
-                return None
-            files = []
-            for f_ in files1:
-                files.append(f_)
-            for f_ in files2:
-                files.append(f_)
-
-            scelta_3 = raw_input("Single or multi:[s/m]")
-            if scelta_3 == 's':
-                for f in files:
-                    bag_to_pickle_middle(f)
-            else:
-                pool = Pool(processes=4)
-                pool.map(bag_to_pickle_middle, files[:])
-                pool.close()
-                pool.join()
-        else:
-            print('Error in selection')
-            sys.exit(1)
+        path = "../bagfiles/validation/"
+        print("creating test set")
+        files = [f for f in os.listdir(path) if f[-4:] == '.bag']
+        if not files:
+            print('No bag files found!')
+            return None
+        datacr_val = DatasetCreator()
+        for f in files:
+            path = bag_file_path[f[:-4]]
+            print("\nreading bag: " + str(f))
+            with rosbag.Bag(path + f) as bag:
+                bag_df_dict = get_bag_data_pandas(bag, model_type=model_type)
+            data_vec = processing(bag_df_dict=bag_df_dict, data_id=f[:-4], f=f, model_type=model_type)
+            datacr_val.generate_data(data_vec=data_vec)
+        datacr_val.save_dataset(flag_train="test", model_type=model_type)
     elif scelta == "2":
         model_type = "v2"
-        scelta2 = raw_input("single or cross:[s/c]")
-        if scelta2 == "s":
-            path = "../bagfiles/train/"
-            files = [f for f in os.listdir(path) if f[-4:] == '.bag']
-            if not files:
-                print('No bag files found!')
-                return None
-            datacr_train = DatasetCreator()
-            for f in files:
-                path = bag_file_path[f[:-4]]
-                print("\nreading bag: " + str(f))
-                with rosbag.Bag(path + f) as bag:
-                    bag_df_dict = get_bag_data_pandas(bag, model_type=model_type)
-                data_vec = processing(bag_df_dict=bag_df_dict, data_id=f[:-4], f=f, model_type=model_type)
-                datacr_train.generate_data(data_vec=data_vec)
-            datacr_train.save_dataset(flag_train="train", model_type=model_type)
+        path = "../bagfiles/train/"
+        files = [f for f in os.listdir(path) if f[-4:] == '.bag']
+        if not files:
+            print('No bag files found!')
+            return None
+        datacr_train = DatasetCreator()
+        for f in files:
+            path = bag_file_path[f[:-4]]
+            print("\nreading bag: " + str(f))
+            with rosbag.Bag(path + f) as bag:
+                bag_df_dict = get_bag_data_pandas(bag, model_type=model_type)
+            data_vec = processing(bag_df_dict=bag_df_dict, data_id=f[:-4], f=f, model_type=model_type)
+            datacr_train.generate_data(data_vec=data_vec)
+        datacr_train.save_dataset(flag_train="train", model_type=model_type)
 
-            path = "../bagfiles/validation/"
-            files = [f for f in os.listdir(path) if f[-4:] == '.bag']
-            if not files:
-                print('No bag files found!')
-                return None
-            datacr_val = DatasetCreator()
-            for f in files:
-                path = bag_file_path[f[:-4]]
-                print("\nreading bag: " + str(f))
-                with rosbag.Bag(path + f) as bag:
-                    bag_df_dict = get_bag_data_pandas(bag, model_type=model_type)
-                data_vec = processing(bag_df_dict=bag_df_dict, data_id=f[:-4], f=f, model_type=model_type)
-                datacr_val.generate_data(data_vec=data_vec)
-            datacr_val.save_dataset(flag_train="test", model_type=model_type)
-
-        elif scelta2 == "c":
-            path1 = "../bagfiles/train/"
-            path2 = "../bagfiles/validation/"
-
-            files1 = [f for f in os.listdir(path1) if f[-4:] == '.bag']
-            if not files1:
-                print('No bag files found!')
-                return None
-            files2 = [f for f in os.listdir(path2) if f[-4:] == '.bag']
-            if not files2:
-                print('No bag files found!')
-                return None
-            files = []
-            for f_ in files1:
-                files.append(f_)
-            for f_ in files2:
-                files.append(f_)
-
-            scelta_3 = raw_input("Singlethread or multi-threaded:[s/m]")
-            if scelta_3 == 's':
-                for f in files:
-                    bag_to_pickle_controller(f)
-            else:
-                pool = Pool(processes=4)
-                pool.map(bag_to_pickle_controller, files[:])
-                pool.close()
-                pool.join()
-        else:
-            print('Error in selection')
-            sys.exit(1)
+        path = "../bagfiles/validation/"
+        files = [f for f in os.listdir(path) if f[-4:] == '.bag']
+        if not files:
+            print('No bag files found!')
+            return None
+        datacr_val = DatasetCreator()
+        for f in files:
+            path = bag_file_path[f[:-4]]
+            print("\nreading bag: " + str(f))
+            with rosbag.Bag(path + f) as bag:
+                bag_df_dict = get_bag_data_pandas(bag, model_type=model_type)
+            data_vec = processing(bag_df_dict=bag_df_dict, data_id=f[:-4], f=f, model_type=model_type)
+            datacr_val.generate_data(data_vec=data_vec)
+        datacr_val.save_dataset(flag_train="test", model_type=model_type)
     elif scelta == "3":
         model_type = "v3"
         scelta2 = raw_input("single or cross:[s/c]")
