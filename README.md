@@ -14,6 +14,8 @@ behavior of a quadrotor implementing such approaches.
 ### Code
 TODO
 ### Dataset
+TODO
 https://drive.switch.ch/index.php/s/1Q0zN0XDzyRxug4
 ### Video
 TODO
+[here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video)
