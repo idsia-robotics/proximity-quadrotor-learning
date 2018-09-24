@@ -12,7 +12,7 @@ their fundamental difference, both approaches yield equivalent
 performance on this task. We finally qualitatively analyze the
 behavior of a quadrotor implementing such approaches.
 ### Code
-TODO
+TODO [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/script)
 ### Dataset
 TODO
 [here](https://drive.switch.ch/index.php/s/1Q0zN0XDzyRxug4)
