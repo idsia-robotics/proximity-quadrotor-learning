@@ -12,8 +12,8 @@ their fundamental difference, both approaches yield equivalent
 performance on this task. We finally qualitatively analyze the
 behavior of a quadrotor implementing such approaches.
 
-------
-### Dataset
+The paper can be seen [here](https://arxiv.org/abs/1809.08881)
+## Dataset
 The Dataset used is composed of 21 different [rosbag](http://wiki.ros.org/rosbag) files. 
 
 Each rosbag correspond to a single recording session. For the recording sessions we used the [Drone Arena](https://github.com/jeguzzi/drone_arena) software. Each recording session as been manually analyzed to select the appropriate start and ending in order to avoid start-up or 'wind down' situations; this information is available in the `gloabl_parameters.py` script as `bag_start_cut` and `bag_end_cut` dictionaries with the bag name as key.
@@ -39,8 +39,8 @@ The whole dataset can be downloaded (6.6 GB) [here](https://drive.switch.ch/inde
 
 A Jupyter notebook on how we extract the data can be found [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/dataset).
 
-### Code
-The code present in this repository is structured to be used in a directory structure like the one that follows.
+## Code
+The code present in this repository is thought to be used in a directory structured like the one that follows.
 
     .
     ├── script                  # Script directory
@@ -51,12 +51,21 @@ The code present in this repository is structured to be used in a directory stru
         ├── version1            # Model 1 dataset .pickle files
         ├── version2            # Model 2 dataset .pickle files
         └── version3            # Model 3 dataset .pickle files
-    
-TODO [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/script)
 
-### Video
-TODO
-[here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video)
+The script that are executable are two:
+* `dataset_generator.py`
+* `keras_train.py`
+### `dataset_generator.py`
+It is used to create the dataset files used by the models. After launchin the script you will be prompted with a menu in order to select the type of dataset to create.
+Each model has it's own dataset.
 
-### Errata
-TODO
+### `keras_train.py`
+Allows you to run each model by it self or all three with the same data.
+
+All scripts are available [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/script)
+
+## Video
+Some videos related to our work can be found [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video)
+
+## Errata
+In the linked paper each image in Fig.2 have the left and bottom plot with inverted direction. Also in the same figure the smaller plot is rotated by 90°
