@@ -1,5 +1,8 @@
 # Vision-based Control of a Quadrotor in User Proximity: Mediated vs End-to-End Learning Approaches
 *Dario Mantegazza, Jérôme Guzzi, Luca M. Gambardella and Alessandro Giusti*
+
+Dalle Molle Institute for Artificial Intelligence (IDSIA), USI-SUPSI, Lugano, Switzerland
+
 ## *Abstract*
 We consider the task of controlling a quadrotor
 to hover in front of a freely moving user, using input data
@@ -12,16 +15,18 @@ their fundamental difference, both approaches yield equivalent
 performance on this task. We finally qualitatively analyze the
 behavior of a quadrotor implementing such approaches.
 
-The paper can be seen [here](https://arxiv.org/abs/1809.08881).
+## Paper download
+Arxiv [link](https://arxiv.org/abs/1809.08881).
+
 ## Dataset
 The Dataset used is composed of 21 different [rosbag](http://wiki.ros.org/rosbag) files. 
 
-Each rosbag correspond to a single recording session. For the recording sessions we used the [Drone Arena](https://github.com/jeguzzi/drone_arena) software. Each recording session as been manually analyzed to select the appropriate start and ending in order to avoid start-up or 'wind down' situations; this information is available in the `gloabl_parameters.py` script as `bag_start_cut` and `bag_end_cut` dictionaries with the bag name as key.
+Each rosbag correspond to a single recording session. For the recording sessions we used software developed in house (available [here](https://github.com/jeguzzi/drone_arena)). Each recording session as been manually trimmed to remove system start-up / takeoff / landing phases; this information is available in the `gloabl_parameters.py` script as `bag_start_cut` and `bag_end_cut` dictionaries with the bag name as key.
 
 
 In each file we recorded multiple [topics](http://wiki.ros.org/Topics); for this paper we use the following topics:
 
-| Topic | data contained |
+| Topic | Description |
 | - | - |
 | `/bebop/image_raw/compressed` | Drone's front facing camera feed |
 | `/optitrack/head` | Motion Capture information about the 6DOF user's head's [pose](http://docs.ros.org/lunar/api/geometry_msgs/html/msg/Pose.html). In sync with OptiTrack system timestamp |
@@ -37,10 +42,10 @@ In our test we randomly divided the whole dataset in train and test set as follo
 
 The whole dataset can be downloaded (6.6 GB) [here](https://drive.switch.ch/index.php/s/1Q0zN0XDzyRxug4).
 
-A Jupyter notebook on how we extract the data can be found [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/dataset).
+A Jupyter notebook implementing dataset extraction from rosbag files can be found [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/dataset).
 
 ## Code
-The code present in this repository is thought to be used in a directory structured like the one that follows.
+The code is structured as follows.
 
     .
     ├── script                  # Script directory
@@ -52,20 +57,21 @@ The code present in this repository is thought to be used in a directory structu
         ├── version2            # Model 2 dataset .pickle files
         └── version3            # Model 3 dataset .pickle files
 
-The script that are executable are two:
+The executable scripts are:
 * `dataset_generator.py`
 * `keras_train.py`
+
 ### `dataset_generator.py`
-It is used to create the dataset files used by the models. After launching the script you will be prompted with a menu in order to select the type of dataset to create.
-Each model has it's own dataset.
+Create the dataset files used by the models.  After launching the script you will be prompted with a menu in order to select the type of dataset to create.
+Each model has its own dataset.
 
 ### `keras_train.py`
-Allows you to run each model by itself or all three with the same data.
+Uses models (one or all at the time) for prediction.
 
 All scripts are available [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/script).
 
 ## Video
-Some videos related to our work can be found [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video).
+Some videos can be found [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video).
 
 ## Errata
 In the paper submission for ICRA2019, each image in Fig.2 have the left and bottom plot with inverted axis. Also in the same figure the smaller plot is rotated by 90° to the right.
