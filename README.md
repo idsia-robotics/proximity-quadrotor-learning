@@ -68,4 +68,4 @@ All scripts are available [here](https://github.com/idsia-robotics/proximity-qua
 Some videos related to our work can be found [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video)
 
 ## Errata
-In the linked paper each image in Fig.2 have the left and bottom plot with inverted direction. Also in the same figure the smaller plot is rotated by 90°
+In the linked paper each image in Fig.2 have the left and bottom plot with inverted direction. Also in the same figures the smaller plot is rotated by 90° to the right
