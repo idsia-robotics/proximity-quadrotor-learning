@@ -26,6 +26,10 @@ In each file we recorded multiple [topics](http://wiki.ros.org/Topics); for this
 | `/bebop/mocap_odom` | Motion Capture information about the 6DOF drone's [pose](http://docs.ros.org/lunar/api/geometry_msgs/html/msg/Pose.html) + [twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html). In sync with Drone Arena timestamp |
 | `/bebop/odom` | Drone's Optical Flow odometry |
 
+In our test we randomly divided the whole dataset in train and test set as follows
+| Train set | Test set |
+|-|-|
+| 
 
 The whole dataset can be downloaded [here](https://drive.switch.ch/index.php/s/1Q0zN0XDzyRxug4).
 
@@ -33,12 +37,15 @@ A Jupyter notebook on how we extract the data can be found TODO.
 
 ### Code
     .
-    ├── script
-    ├── bagfiles                # Bagfiles main dir
+    ├── script                  # Script directory
+    ├── bagfiles                # Bagfiles main directory
     │   ├── train               # Directory for the bagfiles selected for the train set
-    │   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
-    │   └── unit                # Unit tests
-    └── ...
+    │   └── test                # Directory for the bagfiles selected for the test set
+    └── dataset
+        ├── version1            # Model 1 dataset .pickle files
+        ├── version2            # Model 2 dataset .pickle files
+        └── version3            # Model 3 dataset .pickle files
+    
 TODO [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/script)
 
 ### Video
