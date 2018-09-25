@@ -12,7 +12,7 @@ their fundamental difference, both approaches yield equivalent
 performance on this task. We finally qualitatively analyze the
 behavior of a quadrotor implementing such approaches.
 
-The paper can be seen [here](https://arxiv.org/abs/1809.08881)
+The paper can be seen [here](https://arxiv.org/abs/1809.08881).
 ## Dataset
 The Dataset used is composed of 21 different [rosbag](http://wiki.ros.org/rosbag) files. 
 
@@ -56,16 +56,16 @@ The script that are executable are two:
 * `dataset_generator.py`
 * `keras_train.py`
 ### `dataset_generator.py`
-It is used to create the dataset files used by the models. After launchin the script you will be prompted with a menu in order to select the type of dataset to create.
+It is used to create the dataset files used by the models. After launching the script you will be prompted with a menu in order to select the type of dataset to create.
 Each model has it's own dataset.
 
 ### `keras_train.py`
-Allows you to run each model by it self or all three with the same data.
+Allows you to run each model by itself or all three with the same data.
 
-All scripts are available [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/script)
+All scripts are available [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/script).
 
 ## Video
-Some videos related to our work can be found [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video)
+Some videos related to our work can be found [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video).
 
 ## Errata
-In the linked paper each image in Fig.2 have the left and bottom plot with inverted direction. Also in the same figures the smaller plot is rotated by 90° to the right
+In the paper submission for ICRA2019, each image in Fig.2 have the left and bottom plot with inverted axis. Also in the same figure the smaller plot is rotated by 90° to the right.
