@@ -16,7 +16,8 @@ behavior of a quadrotor implementing such approaches.
 ### Dataset
 The Dataset used is composed of 21 different [rosbag](http://wiki.ros.org/rosbag) files. 
 
-Each rosbag correspond to a single recording session. For the recording sessions we used the [Drone Arena](https://github.com/jeguzzi/drone_arena) software.
+Each rosbag correspond to a single recording session. For the recording sessions we used the [Drone Arena](https://github.com/jeguzzi/drone_arena) software. Each recording session as been manually analyzed to select the appropriate start and ending in order to avoid start-up or 'wind down' situations; this information is available in the `gloabl_parameters.py` script as `bag_start_cut` and `bag_end_cut` dictionaries with the bag name as key.
+
 
 In each file we recorded multiple [topics](http://wiki.ros.org/Topics); for this paper we use the following topics:
 
