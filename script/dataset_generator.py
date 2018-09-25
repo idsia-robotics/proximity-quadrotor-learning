@@ -473,7 +473,7 @@ def main():
             datacr_train.generate_data(data_vec=data_vec)
         datacr_train.save_dataset(flag_train="train", model_type=model_type)
 
-        path = "../bagfiles/validation/"
+        path = "../bagfiles/test/"
         print("creating test set")
         files = [f for f in os.listdir(path) if f[-4:] == '.bag']
         if not files:
@@ -505,7 +505,7 @@ def main():
             datacr_train.generate_data(data_vec=data_vec)
         datacr_train.save_dataset(flag_train="train", model_type=model_type)
 
-        path = "../bagfiles/validation/"
+        path = "../bagfiles/test/"
         files = [f for f in os.listdir(path) if f[-4:] == '.bag']
         if not files:
             print('No bag files found!')
@@ -538,7 +538,7 @@ def main():
                 datacr_train.generate_data(data_vec=data_vec)
             datacr_train.save_dataset(flag_train="train", model_type=model_type)
 
-            path = "../bagfiles/validation/"
+            path = "../bagfiles/test/"
             files = [f for f in os.listdir(path) if f[-4:] == '.bag']
             if not files:
                 print('No bag files found!')
@@ -555,7 +555,7 @@ def main():
 
         elif scelta2 == "c":
             path1 = "../bagfiles/train/"
-            path2 = "../bagfiles/validation/"
+            path2 = "../bagfiles/test/"
 
             files1 = [f for f in os.listdir(path1) if f[-4:] == '.bag']
             if not files1:
