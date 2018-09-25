@@ -11,11 +11,19 @@ high-level state estimation altogether. We show that despite
 their fundamental difference, both approaches yield equivalent
 performance on this task. We finally qualitatively analyze the
 behavior of a quadrotor implementing such approaches.
+### Dataset
+The Dataset used is composed of 21 different [rosbag](http://wiki.ros.org/rosbag) files. 
+Each rosbag correspond to a single recording session. 
+In each file we recorded multiple available [topics](http://wiki.ros.org/Topics)
+[here](https://drive.switch.ch/index.php/s/1Q0zN0XDzyRxug4)
+
+
 ### Code
 TODO [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/script)
-### Dataset
-TODO
-[here](https://drive.switch.ch/index.php/s/1Q0zN0XDzyRxug4)
+
 ### Video
 TODO
 [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video)
+
+### Errata
+TODO
