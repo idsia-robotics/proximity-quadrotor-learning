@@ -37,7 +37,7 @@ In our test we randomly divided the whole dataset in train and test set as follo
 
 The whole dataset can be downloaded (6.6 GB) [here](https://drive.switch.ch/index.php/s/1Q0zN0XDzyRxug4).
 
-A Jupyter notebook on how we extract the data can be found TODO.
+A Jupyter notebook on how we extract the data can be found [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/dataset).
 
 ### Code
 The code present in this repository is structured to be used in a directory structure like the one that follows.
