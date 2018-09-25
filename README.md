@@ -11,6 +11,8 @@ high-level state estimation altogether. We show that despite
 their fundamental difference, both approaches yield equivalent
 performance on this task. We finally qualitatively analyze the
 behavior of a quadrotor implementing such approaches.
+
+------
 ### Dataset
 The Dataset used is composed of 21 different [rosbag](http://wiki.ros.org/rosbag) files. 
 
