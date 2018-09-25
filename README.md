@@ -13,9 +13,21 @@ performance on this task. We finally qualitatively analyze the
 behavior of a quadrotor implementing such approaches.
 ### Dataset
 The Dataset used is composed of 21 different [rosbag](http://wiki.ros.org/rosbag) files. 
-Each rosbag correspond to a single recording session. 
-In each file we recorded multiple available [topics](http://wiki.ros.org/Topics)
-[here](https://drive.switch.ch/index.php/s/1Q0zN0XDzyRxug4)
+
+Each rosbag correspond to a single recording session. For the recording sessions we used the [Drone Arena](https://github.com/jeguzzi/drone_arena) software.
+
+In each file we recorded multiple [topics](http://wiki.ros.org/Topics); for this paper we use the following:
+
+| Topic | data contained |
+| ----- | --- |
+| `/bebop/image_raw/compressed` | Drone's front facing camera feed |
+| `/optitrack/head` | Motion Capture information about the 6DOF user's head's [pose](http://docs.ros.org/lunar/api/geometry_msgs/html/msg/Pose.html). In sync with Optitrack System timestamp |
+| `/optitrack/bebop` | Motion Capture information about the 6DOF drone's [pose](http://docs.ros.org/lunar/api/geometry_msgs/html/msg/Pose.html). In sync with Optitrack System timestamp |
+| `/bebop/mocap_odom` | Motion Capture information about the 6DOF drone's [pose](http://docs.ros.org/lunar/api/geometry_msgs/html/msg/Pose.html) + [twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html). In sync with Drone Arena timestamp |
+
+The whole dataset can be downloaded [here](https://drive.switch.ch/index.php/s/1Q0zN0XDzyRxug4).
+
+A Jupyter notebook on how we extract the data can be found TODO.
 
 
 ### Code
