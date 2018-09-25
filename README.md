@@ -27,15 +27,18 @@ In each file we recorded multiple [topics](http://wiki.ros.org/Topics); for this
 | `/bebop/odom` | Drone's Optical Flow odometry |
 
 In our test we randomly divided the whole dataset in train and test set as follows
-| Train set | Test set |
-|-|-|
-| 
 
-The whole dataset can be downloaded [here](https://drive.switch.ch/index.php/s/1Q0zN0XDzyRxug4).
+| Train set bagfiles | Test set bagfiles |
+| - | - |
+| 1, 2, 5, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21 | 3, 4, 6, 15 |
+
+The whole dataset can be downloaded (6.6 GB) [here](https://drive.switch.ch/index.php/s/1Q0zN0XDzyRxug4).
 
 A Jupyter notebook on how we extract the data can be found TODO.
 
 ### Code
+The code present in this repository is structured to be used in a directory structure like the one that follows.
+
     .
     ├── script                  # Script directory
     ├── bagfiles                # Bagfiles main directory
