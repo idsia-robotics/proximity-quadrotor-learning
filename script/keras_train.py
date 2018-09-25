@@ -155,7 +155,7 @@ def main():
         -calls method to plot data for quantitative evaluation
     """
 
-    scelta = raw_input("experiment_version:\n        -v1[1]\n        -v2[2]\n        -v3[3]\n        -1,2[4]\n        -only v3[5]\n")
+    scelta = raw_input("experiment_version:\n        -v1[1]\n        -v2[2]\n        -v3[3]\n        -1,2,3[4]\n        -only v3[5]\n")
     summary_f = raw_input("summary:[y/n]") == "y"
     if isdebugging():
         print("debugging-settings")
