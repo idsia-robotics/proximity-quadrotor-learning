@@ -76,7 +76,8 @@ All scripts are available [here](https://github.com/idsia-robotics/proximity-qua
 
 ## Video
 The video submitted at ICRA2019 is available [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video).
-Other videos are available TODO
+
+Other videos are available [here](https://drive.switch.ch/index.php/s/hUaJcKEBGbGKDA4)
 
 ## Errata
 In the paper submission for ICRA2019, each image in Fig.2 have the left and bottom plot with inverted axis. Also in the same figure the smaller plot is rotated by 90° to the right.
