@@ -76,5 +76,6 @@ Some videos can be found [here](https://github.com/idsia-robotics/proximity-quad
 <p align="center">
   <img src="/video/gif_github_5.gif"/>
 </p>
+
 ## Errata
 In the paper submission for ICRA2019, each image in Fig.2 have the left and bottom plot with inverted axis. Also in the same figure the smaller plot is rotated by 90° to the right.
