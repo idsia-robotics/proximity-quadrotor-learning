@@ -73,6 +73,8 @@ All scripts are available [here](https://github.com/idsia-robotics/proximity-qua
 ## Video
 Some videos can be found [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video).
 
+<script src="http://vjs.zencdn.net/4.0/video.js"></script>
+
 <video id="icraVideo" class="video-js vjs-default-skin" controls
 preload="auto" width="683" height="384" poster="/video/placeholderICRA2019.png"
 data-setup="{}">
