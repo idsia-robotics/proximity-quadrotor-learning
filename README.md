@@ -71,7 +71,8 @@ Uses models (one or all at the time) for prediction.
 All scripts are available [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/script).
 
 ## Video
-Some videos can be found [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video).
+The video submitted at ICRA2019 is available [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video).
+Other videos are available TODO
 
 <p align="center">
   <img src="/video/gif_github_5.gif"/>
