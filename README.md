@@ -70,7 +70,14 @@ Create the dataset files used by the models.  After launching the script you wil
 Each model has its own dataset.
 
 ### `keras_train.py`
-Uses models (one or all at the time) for prediction.
+Uses models (one or all at the same time) for prediction.
+
+<p align="center">
+  <img src="/architecture.png"/>
+</p>
+
+
+A representation of the three models. Model 1 (left), model 2 (center) and model 3(right).
 
 All scripts are available [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/script).
 
