@@ -15,6 +15,10 @@ their fundamental difference, both approaches yield equivalent
 performance on this task. We finally qualitatively analyze the
 behavior of a quadrotor implementing such approaches.
 
+<p align="center">
+  <img src="/video/gif_github_5.gif"/>
+</p>
+
 ## Paper download
 Arxiv [link](https://arxiv.org/abs/1809.08881).
 
@@ -73,10 +77,6 @@ All scripts are available [here](https://github.com/idsia-robotics/proximity-qua
 ## Video
 The video submitted at ICRA2019 is available [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video).
 Other videos are available TODO
-
-<p align="center">
-  <img src="/video/gif_github_5.gif"/>
-</p>
 
 ## Errata
 In the paper submission for ICRA2019, each image in Fig.2 have the left and bottom plot with inverted axis. Also in the same figure the smaller plot is rotated by 90° to the right.
