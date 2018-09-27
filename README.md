@@ -77,7 +77,7 @@ Uses models (one or all at the same time) for prediction.
 </p>
 
 
-A representation of the three models. Model 1 (left), model 2 (center) and model 3(right).
+*Figure: A representation of the three models. Model 1 (left), model 2 (center) and model 3(right).*
 
 All scripts are available [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/script).
 
