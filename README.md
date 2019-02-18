@@ -88,9 +88,9 @@ The video accepted at ICRA 2019 is available [here](https://github.com/idsia-rob
 
 The video accepted at HRI 2019 is available [here](https://drive.switch.ch/index.php/s/MlEDrsuHcSl5Aw5) and relative BibTeX [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/bibtex-hri.bib).
 
-The relative github page is [here](https://github.com/idsia-robotics/proximity-quadrotor-learning-video)
+The relative github page is [here](https://github.com/idsia-robotics/proximity-quadrotor-learning-video).
 
-Other videos are available [here](https://drive.switch.ch/index.php/s/hUaJcKEBGbGKDA4)
+Other videos are available [here](https://drive.switch.ch/index.php/s/hUaJcKEBGbGKDA4).
 
 ## Errata
 Fixed in v2 (final version for ICRA)<i>: In the paper submission for ICRA2019, each image in Fig.2 have the left and bottom plot with inverted axis. Also in the same figure the smaller plot is rotated by 90° to the right.</i>
