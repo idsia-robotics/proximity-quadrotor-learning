@@ -20,7 +20,7 @@ behavior of a quadrotor implementing such approaches.
 </p>
 
 ## Paper Info
-[Arxiv](https://arxiv.org/abs/1809.08881) and relative [bibtex](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/bibtex-icra.bib)
+[Arxiv](https://arxiv.org/abs/1809.08881) and relative [BibTeX](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/bibtex-icra.bib)
 ## Dataset
 The Dataset used is composed of 21 different [rosbag](http://wiki.ros.org/rosbag) files. 
 
@@ -86,7 +86,7 @@ The video accepted at ICRA 2019 is available [here](https://github.com/idsia-rob
 ## Learning Vision-Based Quadrotor Control in User Proximity
 *Dario Mantegazza, Jérôme Guzzi, Luca M. Gambardella and Alessandro Giusti*
 
-The video accepted at HRI 2019 is available [here](https://drive.switch.ch/index.php/s/MlEDrsuHcSl5Aw5) and relative [bibtex](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/bibtex-hri.bib)
+The video accepted at HRI 2019 is available [here](https://drive.switch.ch/index.php/s/MlEDrsuHcSl5Aw5) and relative BibTeX [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/bibtex-hri.bib)
 The relative github page is [here](https://github.com/idsia-robotics/proximity-quadrotor-learning-video)
 
 Other videos are available [here](https://drive.switch.ch/index.php/s/hUaJcKEBGbGKDA4)
