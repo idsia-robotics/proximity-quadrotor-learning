@@ -87,4 +87,4 @@ The video submitted at ICRA2019 is available [here](https://github.com/idsia-rob
 Other videos are available [here](https://drive.switch.ch/index.php/s/hUaJcKEBGbGKDA4)
 
 ## Errata
-Fixed in v2 (final version for ICRA)<i>:In the paper submission for ICRA2019, each image in Fig.2 have the left and bottom plot with inverted axis. Also in the same figure the smaller plot is rotated by 90° to the right.</i>
+Fixed in v2 (final version for ICRA)<i>: In the paper submission for ICRA2019, each image in Fig.2 have the left and bottom plot with inverted axis. Also in the same figure the smaller plot is rotated by 90° to the right.</i>
