@@ -86,7 +86,7 @@ The video accepted at ICRA 2019 is available [here](https://github.com/idsia-rob
 ## Learning Vision-Based Quadrotor Control in User Proximity
 *Dario Mantegazza, Jérôme Guzzi, Luca M. Gambardella and Alessandro Giusti*
 
-The video accepted at HRI 2019 is available [here](https://drive.switch.ch/index.php/s/MlEDrsuHcSl5Aw5).
+The video accepted at HRI 2019 is available [here](https://drive.switch.ch/index.php/s/MlEDrsuHcSl5Aw5) and relative [bibtex](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/bibtex-hri.bib)
 The relative github page is [here](https://github.com/idsia-robotics/proximity-quadrotor-learning-video)
 
 Other videos are available [here](https://drive.switch.ch/index.php/s/hUaJcKEBGbGKDA4)
