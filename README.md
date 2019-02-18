@@ -81,7 +81,13 @@ Uses models (one or all at the same time) for prediction.
 All scripts are available [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/script).
 
 ## Video
-The video submitted at ICRA2019 is available [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video).
+The video accepted at ICRA 2019 is available [here](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/video).
+
+## Learning Vision-Based Quadrotor Control in User Proximity
+*Dario Mantegazza, Jérôme Guzzi, Luca M. Gambardella and Alessandro Giusti*
+
+The video accepted at HRI 2019 is available [here](https://drive.switch.ch/index.php/s/MlEDrsuHcSl5Aw5).
+The relative github page is [here](https://github.com/idsia-robotics/proximity-quadrotor-learning-video)
 
 Other videos are available [here](https://drive.switch.ch/index.php/s/hUaJcKEBGbGKDA4)
 
