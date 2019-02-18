@@ -19,9 +19,8 @@ behavior of a quadrotor implementing such approaches.
   <img src="/video/gif_github_5.gif"/>
 </p>
 
-## Paper download
-Arxiv [link](https://arxiv.org/abs/1809.08881).
-
+## Paper Info
+Arxiv [link](https://arxiv.org/abs/1809.08881) [bibtex](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/bibtex-icra.bib)
 ## Dataset
 The Dataset used is composed of 21 different [rosbag](http://wiki.ros.org/rosbag) files. 
 
