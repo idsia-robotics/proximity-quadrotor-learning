@@ -3,6 +3,8 @@
 
 Dalle Molle Institute for Artificial Intelligence (IDSIA), USI-SUPSI, Lugano, Switzerland
 
+Proceedings of ICRA 2019
+
 ## *Abstract*
 We consider the task of controlling a quadrotor
 to hover in front of a freely moving user, using input data
