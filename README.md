@@ -22,7 +22,7 @@ behavior of a quadrotor implementing such approaches.
 </p>
 
 ## Paper Info
-[Arxiv](https://arxiv.org/abs/1809.08881) and relative [BibTeX](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/bibtex-icra.bib)
+[Arxiv](https://arxiv.org/abs/1809.08881) and related [BibTeX](https://github.com/idsia-robotics/proximity-quadrotor-learning/tree/master/bibtex-icra.bib)
 ## Dataset
 The Dataset used is composed of 21 different [rosbag](http://wiki.ros.org/rosbag) files. 
 
